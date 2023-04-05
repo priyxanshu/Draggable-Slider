@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drag Images</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <i id="left" class="fa-solid fa-angle-left"></i>
+      <div class="carousel">
+        <img
+          id="img-1"
+          src="https://img.freepik.com/premium-photo/watercolor-colorful-flowers-bouquet-isolated-white-background-botanical-illustration-greeting-card-invitation-template_779330-460.jpg?w=740"
+          alt="img-1"
+        />
+        <img
+          src="https://img.freepik.com/free-photo/overhead-view-white-daisy-flowers-baby-s-breath-petals-arranged-pink-background_23-2148076636.jpg?w=1060&t=st=1680317964~exp=1680318564~hmac=5e98ad45580923f6fdb9dbb4bcf8bdb8a39beee97cf4df82fb874ab397b55f49"
+          alt="img-2"
+        />
+        <img
+          src="https://img.freepik.com/free-photo/beautiful-little-pink-flowers-branches_24837-280.jpg?w=1060&t=st=1680317988~exp=1680318588~hmac=9915a5761869dc96ad062bf574ffb5e62e07ec7260d11dd1ec0569723946bb21"
+          alt="img-3"
+        />
+        <img
+          src="https://img.freepik.com/free-photo/blooming-floral-wedding-card-design_53876-95362.jpg?w=740&t=st=1680318076~exp=1680318676~hmac=e66e4da2d15d3af27a41f4c102b7959d3888b15bd8a84b47c38bf0bad74d044e"
+          alt="img-4"
+        />
+        <img
+          src="https://img.freepik.com/premium-photo/beautiful-painted-bouquet-purple-anemones_161488-1322.jpg?w=1060"
+          alt="img-5"
+        />
+      </div>
+      <i id="right" class="fa-solid fa-angle-right"></i>
+    </div>
+  </body>
+
+  <script>
+    const carousel = document.querySelector(".carousel");
+    const arrowIcons = document.querySelectorAll(".wrapper i");
+    const firstImg = document.querySelectorAll("img")[0];
+
+    let firstImgWidth = firstImg.clientWidth + 20;
+
+    arrowIcons.forEach((icon) => {
+      icon.addEventListener("click", () => {
+        carousel.scrollLeft +=
+          icon.id == "left" ? -firstImgWidth : firstImgWidth;
+      });
+    });
+  </script>
+</html>
